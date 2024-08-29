@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoção do Painel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+        .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .qr-code {
+            margin: 20px 0;
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Acesse o Painel</div>
+        <img id="promo-img" src="https://github.com/emanuellevangista/promocao_painel/raw/main/capa_painel.png" alt="Promoção">
+        <div class="qr-code">
+            <img src="https://github.com/emanuellevangista/promocao_painel/raw/main/qrcode.png" alt="QR Code">
+        </div>
+        <a href="https://app.powerbi.com/groups/f2197fda-d476-44b7-8dde-6113d70f8167/reports/3406ba15-6b96-4ce2-9d46-3148465547fd/ReportSection?experience=power-bi&bookmarkGuid=2eafcc1f7c450d930069" class="button">Acessar Relatório</a>
+    </div>
+    <script>
+        function adjustLayout() {
+            const container = document.querySelector('.container');
+            const promoImg = document.getElementById('promo-img');
+            const qrImg = document.getElementById('qr-img');
+
+            if (window.innerWidth < 600) {
+                container.style.padding = '10px';
+                promoImg.style.width = '100%';
+                qrImg.style.width = '100%';
+            } else {
+                container.style.padding = '20px';
+                promoImg.style.width = 'auto';
+                qrImg.style.width = 'auto';
+            }
+        }
+
+        window.addEventListener('resize', adjustLayout);
+        window.addEventListener('load', adjustLayout);
+    </script>
+</body>
+</html>
