@@ -6,14 +6,14 @@
     <title>Promoção do Painel</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #fcd800; /* Fundo amarelo */
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
         }
         .container {
             background-color: #fff;
@@ -23,16 +23,25 @@
             text-align: center;
             max-width: 90%;
             box-sizing: border-box;
+            margin: 20px auto;
         }
         .header {
             font-size: 24px;
             margin-bottom: 20px;
         }
+        .promo-box {
+            background-color: #fcd800;
+            border: 1px solid #000;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
         .promo-text {
             font-size: 18px;
-            margin-bottom: 20px;
-            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: bold;
             color: #333;
+            position: relative;
+            z-index: 1;
         }
         .qr-code {
             margin: 20px 0;
@@ -52,13 +61,32 @@
             max-width: 80%;
             height: auto;
         }
+        .footer {
+            background-color: #00416B;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            height: 25vh; /* Aproximadamente 1/4 da página */
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            img {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">Acesse o Painel</div>
-        <div class="promo-text">
-            O painel agora melhorou o desempenho, está mais fluido e o uso de filtros está com um desempenho melhor. Além disso, incluímos mais quatro novos testes: 230-8 Falso Extravio, 232-2 Funcionamento do Alarme, 234-6 Controle da CNH e 234-9 Transferência e Controle de Veículos.
+        <div class="promo-box">
+            <div class="promo-text">
+                O painel agora melhorou o desempenho, está mais fluido e o uso de filtros está com um desempenho melhor. Além disso, incluímos mais quatro novos testes: 230-8 Falso Extravio, 232-2 Funcionamento do Alarme, 234-6 Controle da CNH e 234-9 Transferência e Controle de Veículos.
+            </div>
         </div>
         <img id="promo-img" src="https://github.com/emanuellevangista/promocao_painel/raw/main/capa_painel.png" alt="Promoção">
         <div class="qr-code">
@@ -66,25 +94,8 @@
         </div>
         <a href="https://app.powerbi.com/groups/f2197fda-d476-44b7-8dde-6113d70f8167/reports/3406ba15-6b96-4ce2-9d46-3148465547fd/ReportSection?experience=power-bi&bookmarkGuid=2eafcc1f7c450d930069" class="button">Acessar Relatório</a>
     </div>
-    <script>
-        function adjustLayout() {
-            const container = document.querySelector('.container');
-            const promoImg = document.getElementById('promo-img');
-            const qrImg = document.getElementById('qr-img');
-
-            if (window.innerWidth < 600) {
-                container.style.padding = '10px';
-                promoImg.style.width = '100%';
-                qrImg.style.width = '100%';
-            } else {
-                container.style.padding = '20px';
-                promoImg.style.width = '80%';
-                qrImg.style.width = '80%';
-            }
-        }
-
-        window.addEventListener('resize', adjustLayout);
-        window.addEventListener('load', adjustLayout);
-    </script>
+    <div class="footer">
+        © 2024 DIGOE - DCINT - GACE
+    </div>
 </body>
 </html>
